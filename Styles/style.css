@@ -9,32 +9,40 @@ body {
   height: 100vh;
 }
 
+:root {
+  --title-font: "Pacifico", cursive;
+  --open-sans: "Open Sans", sans-serif;
+}
+
 .container {
   width: 100%;
   height: 100%;
 }
 
 header {
-  height: 15vh;
-  background-color: #b9f0fd;
+  height: 70px;
   display: flex;
   justify-content: space-between;
+  background: #43c6ac;
+  background: -webkit-linear-gradient(to right, #f8ffae, #43c6ac);
+  background: linear-gradient(to right, #f8ffae, #43c6ac);
 }
 
 .logo {
-  /* width: 100%; */
   height: 100%;
 }
 
 .title {
   display: none;
+  font-family: var(--title-font);
+  color: #2f3640;
 }
 
 .notification-avatar-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
 }
 
 .notification,
@@ -48,10 +56,12 @@ header {
 .notification img {
   height: 35%;
 }
+
 .avatar img {
+  background-color: #fff;
   height: 55%;
   border-radius: 50%;
-  border: 2px solid #05c46b;
+  border: 2px solid #646665;
 }
 
 main {
@@ -73,26 +83,41 @@ main aside {
 
 .search-photo {
   width: 100%;
+  height: 520px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15px;
+  background: url(../assets/images/pexels-gsn-travel-28518085.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(36, 34, 34, 0.498);
+  position: relative;
 }
 
 #search {
-  padding: 5px;
+  width: 70%;
+  padding: 15px;
   border: 1px solid #9f9d9d;
   outline: none;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  background-color: #f6f0f0;
+  font-family: var(--open-sans);
+  font-weight: 800;
 }
 
 .search-btn {
-  padding: 5px;
-  border: 1px solid black;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  padding: 15px 35px;
+  border: none;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
   cursor: pointer;
+  font-family: var(--open-sans);
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #56ccac;
 }
 
 .photos-section {
@@ -105,8 +130,8 @@ main aside {
 }
 
 .photo-container {
-  width: 48%;
-  height: 200px;
+  width: 80%;
+  height: 350px;
   display: flex;
   flex-direction: column;
   background-color: #d6d2d2;
@@ -139,6 +164,7 @@ main aside {
   height: 40%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 4px;
 }
 
@@ -214,4 +240,41 @@ main aside {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .title {
+    display: flex;
+    align-items: center;
+  }
+  .photo-container {
+    width: 48%;
+    height: 550px;
+  }
+
+  .photo-info {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 992px) {
+  .notification img {
+    height: 45%;
+  }
+  .avatar img {
+    height: 85%;
+  }
+  #search {
+    width: 60%;
+  }
+  .photo-container {
+    width: 32%;
+    height: 550px;
+  }
+
+  .photo-info {
+    width: 100%;
+    justify-content: space-evenly;
+  }
 }
