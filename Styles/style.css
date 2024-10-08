@@ -34,17 +34,54 @@ header {
 
 .title {
   display: none;
-  font-family: var(--title-font);
+  font-family: var(--open-sans);
   color: #2f3640;
+  margin-left: 125px;
 }
 
-.notification-avatar-section {
+.header-right-side {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
 }
 
+.categories {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 1rem;
+  font-family: var(--open-sans);
+  font-weight: bold;
+  color: #2a2a2a;
+  cursor: pointer;
+}
+
+.categories-options {
+  width: 170px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-family: var(--open-sans);
+  font-size: 0.9rem;
+  background-color: #e2eee2;
+  z-index: 1000;
+  display: none;
+}
+
+.categories-options > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #d6d2d2;
+  height: 40px;
+}
+
+.categories-options > div img {
+  width: 8vw;
+}
 .notification,
 .avatar {
   height: 100%;
@@ -242,7 +279,25 @@ main aside {
   cursor: pointer;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #54cbac;
+}
+
+@media (min-width: 480px) {
+  .categories-options > div img {
+    width: 4vw;
+  }
+}
+
 @media (min-width: 768px) {
+  header {
+    padding: 0 15px;
+  }
   .title {
     display: flex;
     align-items: center;
@@ -259,6 +314,9 @@ main aside {
 }
 
 @media (min-width: 992px) {
+  .categories-options > div img {
+    width: 2vw;
+  }
   .notification img {
     height: 45%;
   }
