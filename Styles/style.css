@@ -27,6 +27,7 @@ header {
   background: #43c6ac;
   background: -webkit-linear-gradient(to right, #f8ffae, #43c6ac);
   background: linear-gradient(to right, #f8ffae, #43c6ac);
+  padding: 0 5px;
 }
 
 .logo {
@@ -102,7 +103,7 @@ header {
 }
 
 .avatar img {
-  background-color: #fff;
+  background-color: #eafbae;
   height: 55%;
   border-radius: 50%;
   border: 2px solid #646665;
@@ -182,9 +183,10 @@ main aside {
 
 .photo-container {
   width: 90%;
-  height: 350px;
+  height: 450px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: #eaf0ea;
   border-radius: 10px;
   margin-top: 15px;
