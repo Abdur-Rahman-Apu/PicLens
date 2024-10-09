@@ -7,11 +7,14 @@ const categoriesOptionsContainer = selectElm(".categories-options");
 const searchInput = selectElm("#search");
 const searchBtn = selectElm(".search-btn");
 
+const galleryContainer = selectElm(".photos-section");
+
 const switchGalleryContainer = selectElm(".switch-gallery");
 
 export {
   categoriesContainer,
   categoriesOptionsContainer,
+  galleryContainer,
   searchBtn,
   searchInput,
   switchGalleryContainer,
