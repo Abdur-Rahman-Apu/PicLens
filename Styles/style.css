@@ -67,6 +67,7 @@ header {
   font-family: var(--open-sans);
   font-size: 0.9rem;
   background-color: #e2eee2;
+  box-shadow: 3px 3px 3px #535050;
   z-index: 1000;
   display: none;
 }
@@ -314,16 +315,17 @@ main aside {
 }
 
 .toast-message-container {
+  width: 250px;
   position: absolute;
   top: 5%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: red;
   padding: 15px;
   font-family: var(--open-sans);
   font-weight: bold;
+  text-align: center;
+  background-color: red;
   color: #fff;
-  width: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -331,6 +333,29 @@ main aside {
   visibility: hidden;
   opacity: 0;
   scale: 0;
+}
+
+@keyframes showAnim {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes hideAnim {
+  from {
+    visibility: visible;
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+    scale: 0;
+  }
 }
 
 ::-webkit-scrollbar {

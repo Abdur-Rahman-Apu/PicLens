@@ -1,19 +1,26 @@
 export default function photoMarkUp(photoInfo) {
+  const {
+    alt,
+    url,
+    likes,
+    user: { name, profile_image, location },
+    publishedAt,
+  } = photoInfo;
   return `
     <div class="photo-container">
       <div class="photo">
-        <img src="./assets/images/1.jpg" alt="" />
+        <img src="${url}" alt="${alt}" />
       </div>
-      <p class="photo-name">Sky</p>
+      <p class="photo-name">${alt}</p>
       <div class="photo-utilities">
         <div class="user-info">
           <img
-            src="./assets/images/avatar.png"
+            src="${profile_image?.large}"
             alt="This image is indicating the user"
           />
           <div class="user-name-location">
-            <p class="user-name">Pierre Lemos</p>
-            <p class="location">Toulouse</p>
+            <p class="user-name">${name}</p>
+            <p class="location">${location}</p>
           </div>
         </div>
         <div class="photo-info">
@@ -22,14 +29,14 @@ export default function photoMarkUp(photoInfo) {
               src="./assets/images/heart.png"
               alt="This image is representing how many likes are achieved"
             />
-            <p class="likes-amount">100</p>
+            <p class="likes-amount">${likes}</p>
           </div>
           <div class="created-time">
             <img
               src="./assets/images/schedule.png"
               alt="This image is indicating the calendar when the pic is added"
             />
-            <p>16-08-2019</p>
+            <p>${publishedAt}</p>
           </div>
         </div>
       </div>

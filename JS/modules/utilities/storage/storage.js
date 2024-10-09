@@ -1,5 +1,6 @@
-const retrieveFromStorage = (key) => localStorage.getItem(key);
+const retrieveFromStorage = (key) => JSON.parse(localStorage.getItem(key));
 
-const setIntoStorage = (key, value) => localStorage.setItem(key, value);
+const setIntoStorage = (key, value) =>
+  localStorage.setItem(key, JSON.stringify(value));
 
 export { retrieveFromStorage, setIntoStorage };

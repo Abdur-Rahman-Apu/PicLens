@@ -1,5 +1,8 @@
 const appState = {
   data: [],
+  page: 1,
 };
 
-export { appState };
+const baseUrl = "https://api.unsplash.com";
+
+export { appState, baseUrl };
