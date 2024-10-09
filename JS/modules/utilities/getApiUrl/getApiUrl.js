@@ -12,7 +12,7 @@ export default function getApiUrl({ type, page, query, category }) {
       break;
 
     case "photos":
-      url += `/${type}/?per_page=12`;
+      url += `/${type}/?page=${page}&per_page=12`;
       break;
   }
 
