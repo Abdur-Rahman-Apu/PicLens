@@ -79,6 +79,10 @@ header {
   height: 40px;
 }
 
+.categories-options > div:hover {
+  background-color: #6aefce;
+}
+
 .categories-options > div img {
   width: 8vw;
 }
@@ -155,6 +159,12 @@ main aside {
   font-size: 0.9rem;
   font-weight: bold;
   background-color: #56ccac;
+  color: #000000;
+  transition: background-color 1s;
+}
+
+.search-btn:hover {
+  background-color: #0cb185;
 }
 
 .photos-section {
@@ -376,7 +386,7 @@ main aside {
     height: 85%;
   }
   #search {
-    width: 60%;
+    width: 40%;
   }
   .photo-container {
     width: 32%;

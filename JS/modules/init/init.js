@@ -1,3 +1,5 @@
+import eventListeners from "../listeners/eventListeners.js";
+
 export default function init() {
   //   fetch(
   //     `https://api.unsplash.com/topics/animals/photos?page=530&client_id=${accessKey}`
@@ -6,4 +8,6 @@ export default function init() {
   //     .then((data) => {
   //       console.log(data);
   //     });
+
+  eventListeners();
 }
