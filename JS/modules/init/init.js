@@ -1,4 +1,5 @@
 import eventListeners from "../listeners/eventListeners.js";
+import updateOnRefresh from "../photo/updateOnRefresh.js";
 
 export default function init() {
   //   fetch(
@@ -8,6 +9,8 @@ export default function init() {
   //     .then((data) => {
   //       console.log(data);
   //     });
+
+  updateOnRefresh();
 
   eventListeners();
 }

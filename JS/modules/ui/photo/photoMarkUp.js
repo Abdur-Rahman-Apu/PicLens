@@ -11,7 +11,6 @@ export default function photoMarkUp(photoInfo) {
       <div class="photo">
         <img src="${url}" alt="${alt}" />
       </div>
-      <p class="photo-name">${alt}</p>
       <div class="photo-utilities">
         <div class="user-info">
           <img

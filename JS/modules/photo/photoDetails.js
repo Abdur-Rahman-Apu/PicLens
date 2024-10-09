@@ -3,7 +3,7 @@ import photoMarkUp from "../ui/photo/photoMarkUp.js";
 
 export default function photoDetails(data) {
   if (data?.length) {
-    const htmlMarkup = data.map((photo) => photoMarkUp(photo));
+    const htmlMarkup = data.map((photo) => photoMarkUp(photo)).join("");
     galleryContainer.innerHTML = htmlMarkup;
   }
 }

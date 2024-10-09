@@ -88,6 +88,7 @@ header {
 .categories-options > div img {
   width: 8vw;
 }
+
 .notification,
 .avatar {
   height: 100%;
@@ -137,6 +138,7 @@ main aside {
   background-blend-mode: overlay;
   background-color: rgba(36, 34, 34, 0.498);
   position: relative;
+  padding: 0 5px;
 }
 
 #search {
@@ -203,16 +205,6 @@ main aside {
   height: 70%;
 }
 
-.photo-name {
-  height: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.5rem;
-  font-family: var(--open-sans);
-}
-
 .photo-container .photo img {
   height: 100%;
   width: 100%;
@@ -221,24 +213,27 @@ main aside {
 
 .photo-utilities {
   width: 100%;
-  height: 20%;
+  height: 25%;
   display: flex;
   justify-content: space-between;
+
   /* flex-direction: column; */
   /* align-items: center; */
-  /* padding: 4px; */
+  padding: 0 5px;
 }
 
 .user-info {
   height: 100%;
-  width: 52%;
+  width: 58%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  gap: 10px;
 }
 
 .user-info img {
-  height: 80%;
+  height: 60%;
+  border-radius: 50%;
 }
 
 .user-name {
@@ -252,7 +247,7 @@ main aside {
 }
 
 .photo-info {
-  width: 46%;
+  width: 40%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -384,12 +379,9 @@ main aside {
   .categories-options > div img {
     width: 4vw;
   }
+
   .photo-container {
     height: 550px;
-  }
-
-  .photo-name {
-    font-size: 1.9rem;
   }
 
   .user-info {
@@ -416,16 +408,22 @@ main aside {
   header {
     padding: 0 15px;
   }
+
   .title {
     display: flex;
     align-items: center;
   }
+
   .photo-container {
     width: 48%;
   }
 
   .user-name {
     font-size: 1.08rem;
+  }
+
+  .user-info {
+    width: 58%;
   }
 
   .photo-info {
@@ -458,10 +456,6 @@ main aside {
 }
 
 @media (min-width: 1024px) {
-  .photo-name {
-    font-size: 1.5rem;
-  }
-
   .user-name {
     font-size: 1.2rem;
   }
