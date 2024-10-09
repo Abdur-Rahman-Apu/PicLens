@@ -15,6 +15,7 @@ export default function handleSearch() {
     updateData("type", "query");
     updateData("page", 1);
     updateData("query", searchValue);
+    updateData("category", null);
 
     fetchPhotoWithUpdate({ type: "query", page: 1, query: searchValue });
 

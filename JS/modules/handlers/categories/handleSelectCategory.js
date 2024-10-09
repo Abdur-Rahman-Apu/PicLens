@@ -12,6 +12,7 @@ export default async function handleSelectCategory(e) {
   updateData("category", category);
   updateData("type", "topics");
   updateData("page", 1);
+  updateData("query", null);
 
   storeIntoDb();
 

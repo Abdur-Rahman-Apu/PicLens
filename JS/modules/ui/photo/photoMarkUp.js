@@ -19,7 +19,7 @@ export default function photoMarkUp(photoInfo) {
           />
           <div class="user-name-location">
             <p class="user-name">${name}</p>
-            <p class="location">${location}</p>
+            <p class="location">${location ?? "unknown"}</p>
           </div>
         </div>
         <div class="photo-info">
