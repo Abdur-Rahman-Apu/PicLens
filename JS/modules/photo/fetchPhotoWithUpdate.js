@@ -1,5 +1,4 @@
 import { sendApiRequest } from "../ajax/ajax.js";
-import { appState } from "../config/config.js";
 import { storeIntoDb } from "../db/db.js";
 import showToast from "../ui/toast/showToast.js";
 import { updateData } from "../utilities/appState/updateAppState.js";
@@ -21,11 +20,13 @@ export default async function fetchPhotoWithUpdate(urlQuery) {
 
     const photoData = filterDataInfo(data);
 
-    updateData(appState.data, photoData);
+    updateData("data", photoData);
 
     storeIntoDb();
 
     photoDetails(photoData);
+
+    showToast({ type: "success", message: "Photos are updated" });
   } catch (err) {
     console.log(err);
     showToast({ type: "error", message: err?.message ?? "Network error" });

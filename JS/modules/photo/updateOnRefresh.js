@@ -1,4 +1,3 @@
-import { appState } from "../config/config.js";
 import { getFromDb } from "../db/db.js";
 import { updateData } from "../utilities/appState/updateAppState.js";
 import fetchPhotoWithUpdate from "./fetchPhotoWithUpdate.js";
@@ -8,7 +7,14 @@ export default function updateOnRefresh() {
   const previousStorageData = getFromDb();
 
   if (previousStorageData) {
-    updateData(appState, previousStorageData);
+    const { data, page, query, category, type } = previousStorageData;
+
+    updateData("data", data);
+    updateData("page", page);
+    updateData("query", query);
+    updateData("category", category);
+    updateData("type", type);
+
     photoDetails(previousStorageData?.data);
   } else {
     fetchPhotoWithUpdate();

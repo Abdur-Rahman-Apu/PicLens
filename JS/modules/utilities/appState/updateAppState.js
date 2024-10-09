@@ -1,3 +1,5 @@
-const updateData = (key, value) => Object.assign(key, value);
+import { appState } from "../../config/config.js";
+
+const updateData = (key, value) => (appState[key] = value);
 
 export { updateData };

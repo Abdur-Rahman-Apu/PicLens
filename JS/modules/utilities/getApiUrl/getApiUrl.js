@@ -5,13 +5,14 @@ export default function getApiUrl({ type, page, query, category }) {
   let url = baseUrl;
   switch (type) {
     case "topics":
-      url += `/topics/${category}/photos?page=${page}&`;
+      url += `/${type}/${category}/photos?page=${page}&`;
       break;
     case "query":
+      url += `/search/photos?page=${page}&query=${query}&`;
       break;
 
-    default:
-      url += `/photos/?`;
+    case "photos":
+      url += `/${type}/?`;
       break;
   }
 

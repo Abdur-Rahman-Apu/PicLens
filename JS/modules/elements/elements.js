@@ -10,6 +10,9 @@ const searchBtn = selectElm(".search-btn");
 const galleryContainer = selectElm(".photos-section");
 
 const switchGalleryContainer = selectElm(".switch-gallery");
+const switchPrevBtn = selectElm(".switch-prev");
+const switchNextBtn = selectElm(".switch-next");
+
 const toastMessageContainer = selectElm(".toast-message-container");
 const toastMessage = selectElm(".toast-message");
 
@@ -20,6 +23,8 @@ export {
   searchBtn,
   searchInput,
   switchGalleryContainer,
+  switchNextBtn,
+  switchPrevBtn,
   toastMessage,
   toastMessageContainer,
 };

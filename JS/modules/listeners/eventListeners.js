@@ -8,7 +8,7 @@ import handleCloseCategories from "../handlers/categories/handleCloseCategories.
 import handleOpenCategories from "../handlers/categories/handleOpenCategories.js";
 import handleSelectCategory from "../handlers/categories/handleSelectCategory.js";
 import handleSearch from "../handlers/search/handleSearch.js";
-import handleSwitchGallery from "../handlers/switchGallery/handleSwitchGallery.js";
+import handleSwitchGallery from "../handlers/switchPage/handleSwitchGallery.js";
 import { listenEvent } from "../utilities/dom/domUtilities.js";
 
 export default function eventListeners() {

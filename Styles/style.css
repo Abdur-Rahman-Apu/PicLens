@@ -303,7 +303,8 @@ main aside {
 }
 
 .switch-gallery button {
-  background-color: #4fcaac;
+  /* background-color: #4fcaac; */
+  background-color: #292828;
   color: #fff;
   font-size: 1rem;
   font-weight: bold;
@@ -312,6 +313,16 @@ main aside {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.switch-gallery button:disabled {
+  background-color: #c3c3c3;
+  cursor: not-allowed;
+}
+
+.switch-gallery button.active {
+  /* background-color: #000000; */
+  background-color: #4fcaac;
 }
 
 .toast-message-container {
@@ -340,6 +351,7 @@ main aside {
     opacity: 0;
     scale: 0;
   }
+
   to {
     opacity: 1;
     scale: 1;
@@ -351,6 +363,7 @@ main aside {
     opacity: 1;
     scale: 1;
   }
+
   to {
     visibility: hidden;
     opacity: 0;
