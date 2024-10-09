@@ -4,4 +4,12 @@ const categoriesContainer = selectElm(".categories");
 
 const categoriesOptionsContainer = selectElm(".categories-options");
 
-export { categoriesContainer, categoriesOptionsContainer };
+const searchInput = selectElm("#search");
+const searchBtn = selectElm(".search-btn");
+
+export {
+  categoriesContainer,
+  categoriesOptionsContainer,
+  searchBtn,
+  searchInput,
+};
