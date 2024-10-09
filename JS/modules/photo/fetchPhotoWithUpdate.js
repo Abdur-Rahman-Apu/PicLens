@@ -18,7 +18,13 @@ export default async function fetchPhotoWithUpdate(urlQuery) {
       return;
     }
 
-    const photoData = filterDataInfo(data);
+    let photoData = [];
+
+    if (urlQuery?.type == "query") {
+      photoData = filterDataInfo(data?.results);
+    } else {
+      photoData = filterDataInfo(data);
+    }
 
     updateData("data", photoData);
 
