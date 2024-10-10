@@ -1,3 +1,4 @@
+// format: DD-MM-YYYY
 export default function formatDate(date) {
   const extractDate = new Date(date).toLocaleDateString();
 

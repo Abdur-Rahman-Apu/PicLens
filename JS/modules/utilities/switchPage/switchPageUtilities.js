@@ -1,18 +1,20 @@
 import { switchGalleryContainer } from "../../elements/elements.js";
 
+// disable the button
 const disabledButton = (targetElm) =>
   targetElm.setAttribute("disabled", "disabled");
 
+// enable the button
 const enabledBtn = (targetElm) => targetElm.removeAttribute("disabled");
 
+// add active class on the button element
 const setActiveButton = (targetElm) => targetElm.classList.add("active");
 
+// remove active class from the button element
 const removePreviousActiveClass = () => {
-  console.log(switchGalleryContainer.children);
+  // search active class name on every button element and remove the class
   Array.from(switchGalleryContainer.children).forEach((child) => {
-    console.log(child);
     if (child.classList.contains("active")) {
-      console.log("inside remove");
       child.classList.remove("active");
     }
   });

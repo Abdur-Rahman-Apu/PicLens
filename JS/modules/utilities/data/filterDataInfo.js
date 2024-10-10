@@ -1,8 +1,7 @@
 import formatDate from "./formatDate.js";
 
 export default function filterDataInfo(data) {
-  console.log(data);
-  console.log(data?.urls, "urls");
+  // extract necessary informations
 
   return data.map((item) => {
     const {

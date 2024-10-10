@@ -6,7 +6,7 @@ export default function handleSearch() {
   const searchValue = searchInput.value;
 
   if (searchValue) {
-    console.log(searchValue);
+    //   if value is exist
 
     const updateStateData = [
       ["type", "query"],
@@ -17,18 +17,10 @@ export default function handleSearch() {
 
     const fetchQuery = { type: "query", page: 1, query: searchValue };
 
+    // fetch and update the UI
     updateDataOnFetch({ updateStateData, fetchQuery });
-
-    // updateMultipleData(updateStateData);
-
-    // fetchPhotoWithUpdate({ type: "query", page: 1, query: searchValue });
-
-    // switchPageButtons(1);
-
-    // updatePrevAndNextButton();
   } else {
-    // show toast message
-    console.log("toast");
+    // show error message
     showToast({ type: "error", message: "Please fill the field" });
   }
 

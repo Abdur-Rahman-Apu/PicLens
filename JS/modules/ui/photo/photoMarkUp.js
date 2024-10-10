@@ -6,6 +6,7 @@ export default function photoMarkUp(photoInfo) {
     user: { name, profile_image, location },
     publishedAt,
   } = photoInfo;
+
   return `
     <div class="photo-container">
       <div class="photo">

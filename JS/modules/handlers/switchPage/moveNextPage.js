@@ -9,16 +9,16 @@ export default function moveNextPage() {
   if (page !== 5) {
     const newPageNo = page + 1;
 
-    // removePreviousActiveClass();
-
-    // setActiveButton(selectElm(`.switch-${newPageNo}`));
-
+    // update buttons state
     switchPageButtons(newPageNo);
 
+    // update page state
     updateData("page", newPageNo);
 
+    // update the storage
     storeIntoDb();
 
+    // fetch and update the UI
     fetchPhotoWithUpdate(appState);
   }
 }

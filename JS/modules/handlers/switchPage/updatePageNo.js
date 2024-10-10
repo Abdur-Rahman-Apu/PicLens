@@ -5,20 +5,15 @@ import switchPageButtons from "../../ui/switchPage/switchPageButtons.js";
 import { updateData } from "../../utilities/appState/updateAppState.js";
 
 export default function updatePageNo(pageNo) {
-  // removePreviousActiveClass();
-
-  // setActiveButton(selectElm(`.switch-${pageNo}`));
-
-  console.log(pageNo);
-
+  // update buttons state
   switchPageButtons(pageNo);
 
-  // updateData(appState.page, pageNo);
+  // update page state in the global state
   updateData("page", pageNo);
 
+  // update the db
   storeIntoDb();
 
-  console.log(appState);
-
+  // fetch data and Update the UI
   fetchPhotoWithUpdate(appState);
 }

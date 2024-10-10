@@ -1,47 +1,49 @@
 import { getFromDb } from "../db/db.js";
-import toggleNextButton from "../handlers/switchPage/toggleNextButton.js";
-import togglePrevButton from "../handlers/switchPage/togglePrevButton.js";
 import switchPageButtons from "../ui/switchPage/switchPageButtons.js";
-import { updateData } from "../utilities/appState/updateAppState.js";
+import { updateMultipleData } from "../utilities/appState/updateAppState.js";
 import updateDataOnFetch from "../utilities/data/updateDataOnFetch.js";
+import updatePrevAndNextButton from "../utilities/switchPage/updatePrevAndNextButton.js";
 import photoDetails from "./photoDetails.js";
 
 export default function updateOnRefresh() {
+  // getting data from the storage
   const previousStorageData = getFromDb();
 
   if (previousStorageData) {
+    // if exist update the UI
     const { data, page, query, category, type } = previousStorageData;
 
-    updateData("data", data);
-    updateData("page", page);
-    updateData("query", query);
-    updateData("category", category);
-    updateData("type", type);
+    const updateStateData = [
+      ["data", data],
+      ["page", page],
+      ["query", query],
+      ["category", category],
+      ["type", type],
+    ];
 
+    // update global state
+    updateMultipleData(updateStateData);
+
+    // update buttons state
     switchPageButtons(page);
 
+    // update the gallery section
     photoDetails(previousStorageData?.data);
 
-    togglePrevButton();
-    toggleNextButton();
+    // update the prev and next button state
+    updatePrevAndNextButton();
   } else {
+    // if no data exist in the storage, then get photos
+
     const updateStateData = [
       ["type", "photos"],
       ["query", null],
       ["category", null],
     ];
 
-    // updateData("type", "photos");
-    // updateData("query", null);
-    // updateData("category", null);
-
     const fetchQuery = { type: "photos", page: 1 };
 
+    // update after fetching data
     updateDataOnFetch({ updateStateData, fetchQuery });
-
-    //     fetchPhotoWithUpdate({ type: "photos", page: 1 });
-
-    //     switchPageButtons(1);
-    //    updatePrevAndNextButton()
   }
 }

@@ -4,9 +4,9 @@ import movePreviousPage from "./movePreviousPage.js";
 import updatePageNo from "./updatePageNo.js";
 
 export default function handleSwitchGallery(e) {
+  // get the clicked button name
   const move = e.target.dataset.move;
 
-  console.log(move);
   switch (move) {
     case "prev":
       movePreviousPage();
@@ -25,5 +25,6 @@ export default function handleSwitchGallery(e) {
       break;
   }
 
+  // update the prev and next buttons state
   updatePrevAndNextButton();
 }

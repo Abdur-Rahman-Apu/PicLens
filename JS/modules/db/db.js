@@ -5,7 +5,6 @@ import {
 } from "../utilities/storage/storage.js";
 
 const storeIntoDb = () => {
-  console.log(appState);
   setIntoStorage("picLens", appState);
 };
 
