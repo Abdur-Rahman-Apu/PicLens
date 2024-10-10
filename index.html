@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PicLens</title>
 
+    <!-- favicon  -->
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
 
     <!-- google font  -->
@@ -20,20 +21,32 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- custom style  -->
+    <!-- custom css style  -->
     <link rel="stylesheet" href="./Styles/style.css">
 </head>
 
 <body>
 
+    <!-- container start  -->
     <div class="container">
+
+        <!-- header part start  -->
         <header>
+            <!-- logo  -->
             <img src="./assets/images/logo.png" alt="This is the logo of the website" class="logo">
+
+            <!-- title  -->
             <h1 class="title">Pic📷Lens</h1>
+
+            <!-- right side elements  -->
             <div class="header-right-side">
+
+                <!-- categories part start  -->
                 <div class="categories">
+
                     <p>Categories <i class="fa-solid fa-angle-down"></i></p>
 
+                    <!-- categories menus start  -->
                     <div class="categories-options">
                         <div data-category="animals">
                             <img src="./assets/images/categories/animal.png"
@@ -76,29 +89,47 @@
                             <p data-category="film">Film</p>
                         </div>
                     </div>
-
+                    <!-- categories menus end  -->
                 </div>
+                <!-- categories part end  -->
 
+                <!-- notification icon  -->
                 <div class="notification">
                     <img src="./assets/images/bell.png" alt="This image representing the notification icon">
                 </div>
 
+                <!-- avatar image  -->
                 <div class="avatar">
                     <img src="./assets/images/avatar.png" alt="This is an avatar image">
                 </div>
 
             </div>
-        </header>
 
+        </header>
+        <!-- header part end  -->
+
+
+        <!-- main part start  -->
         <main>
 
+            <!-- gallery section start  -->
             <div class="gallery-section">
+
+                <!-- search photo section start  -->
                 <div class="search-photo">
+                    <!-- input  -->
                     <input type="text" name="search" id="search" placeholder="Search  photo...">
+
+                    <!-- search button  -->
                     <button class="search-btn">Search</button>
                 </div>
+                <!-- search photo section end  -->
 
+
+                <!-- photos section start  -->
                 <div class="photos-section">
+
+                    <!-- dummy photos start -->
                     <div class="photo-container">
                         <div class="photo">
                             <img src="./assets/images/1.jpg" alt="">
@@ -324,8 +355,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                    <!-- dummy photos end  -->
 
+                </div>
+                <!-- photos section end  -->
+
+
+                <!-- switch page buttons start  -->
                 <div class="switch-gallery">
                     <button data-move="prev" class="switch-prev">Prev</button>
                     <button data-move="1" class="switch-1 ">1</button>
@@ -335,17 +371,24 @@
                     <button data-move="5" class="switch-5">5</button>
                     <button data-move="next" class="switch-next">Next</button>
                 </div>
+                <!-- switch page buttons end  -->
+
             </div>
+            <!-- gallery section end  -->
+
         </main>
+        <!-- main part end  -->
 
-
-        <!-- toast message  -->
+        <!-- toast message start -->
         <div class="toast-message-container">
             <p class="toast-message">Failed to get data</p>
         </div>
+        <!-- toast message end  -->
+
     </div>
+    <!-- container end  -->
 
-
+    <!-- modular pattern used   -->
     <script type="module" src="./JS/app.js"></script>
 </body>
 
