@@ -1,26 +1,26 @@
-import { storeIntoDb } from "../../db/db.js";
-import fetchPhotoWithUpdate from "../../photo/fetchPhotoWithUpdate.js";
-import switchPageButtons from "../../ui/switchPage/switchPageButtons.js";
-import { updateData } from "../../utilities/appState/updateAppState.js";
-import toggleNextButton from "../switchPage/toggleNextButton.js";
-import togglePrevButton from "../switchPage/togglePrevButton.js";
+import updateDataOnFetch from "../../utilities/data/updateDataOnFetch.js";
 
 export default async function handleSelectCategory(e) {
   const category = e.target.dataset.category;
   console.log(category);
 
-  updateData("category", category);
-  updateData("type", "topics");
-  updateData("page", 1);
-  updateData("query", null);
+  const updateStateData = [
+    ["category", category],
+    ["type", "topics"],
+    ["type", "topics"],
+    ["query", null],
+  ];
 
-  storeIntoDb();
+  const fetchQuery = { type: "topics", page: 1, category };
 
-  fetchPhotoWithUpdate({ type: "topics", page: 1, category });
+  updateDataOnFetch({ updateStateData, fetchQuery });
+  //   updateMultipleData(updateStateData);
 
-  switchPageButtons(1);
+  //   storeIntoDb();
 
-  togglePrevButton();
+  //   fetchPhotoWithUpdate({ type: "topics", page: 1, category });
 
-  toggleNextButton();
+  //   switchPageButtons(1);
+
+  //   updatePrevAndNextButton();
 }

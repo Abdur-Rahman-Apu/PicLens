@@ -1,7 +1,6 @@
+import updatePrevAndNextButton from "../../utilities/switchPage/updatePrevAndNextButton.js";
 import moveNextPage from "./moveNextPage.js";
 import movePreviousPage from "./movePreviousPage.js";
-import toggleNextButton from "./toggleNextButton.js";
-import togglePrevButton from "./togglePrevButton.js";
 import updatePageNo from "./updatePageNo.js";
 
 export default function handleSwitchGallery(e) {
@@ -26,6 +25,5 @@ export default function handleSwitchGallery(e) {
       break;
   }
 
-  togglePrevButton();
-  toggleNextButton();
+  updatePrevAndNextButton();
 }

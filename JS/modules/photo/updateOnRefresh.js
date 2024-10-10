@@ -3,7 +3,7 @@ import toggleNextButton from "../handlers/switchPage/toggleNextButton.js";
 import togglePrevButton from "../handlers/switchPage/togglePrevButton.js";
 import switchPageButtons from "../ui/switchPage/switchPageButtons.js";
 import { updateData } from "../utilities/appState/updateAppState.js";
-import fetchPhotoWithUpdate from "./fetchPhotoWithUpdate.js";
+import updateDataOnFetch from "../utilities/data/updateDataOnFetch.js";
 import photoDetails from "./photoDetails.js";
 
 export default function updateOnRefresh() {
@@ -25,14 +25,23 @@ export default function updateOnRefresh() {
     togglePrevButton();
     toggleNextButton();
   } else {
-    updateData("type", "photos");
-    updateData("query", null);
-    updateData("category", null);
+    const updateStateData = [
+      ["type", "photos"],
+      ["query", null],
+      ["category", null],
+    ];
 
-    fetchPhotoWithUpdate({ type: "photos", page: 1 });
+    // updateData("type", "photos");
+    // updateData("query", null);
+    // updateData("category", null);
 
-    switchPageButtons(1);
-    togglePrevButton();
-    toggleNextButton();
+    const fetchQuery = { type: "photos", page: 1 };
+
+    updateDataOnFetch({ updateStateData, fetchQuery });
+
+    //     fetchPhotoWithUpdate({ type: "photos", page: 1 });
+
+    //     switchPageButtons(1);
+    //    updatePrevAndNextButton()
   }
 }

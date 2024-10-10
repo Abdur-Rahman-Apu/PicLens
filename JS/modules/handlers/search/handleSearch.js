@@ -1,10 +1,6 @@
 import { searchInput } from "../../elements/elements.js";
-import fetchPhotoWithUpdate from "../../photo/fetchPhotoWithUpdate.js";
-import switchPageButtons from "../../ui/switchPage/switchPageButtons.js";
 import showToast from "../../ui/toast/showToast.js";
-import { updateData } from "../../utilities/appState/updateAppState.js";
-import toggleNextButton from "../switchPage/toggleNextButton.js";
-import togglePrevButton from "../switchPage/togglePrevButton.js";
+import updateDataOnFetch from "../../utilities/data/updateDataOnFetch.js";
 
 export default function handleSearch() {
   const searchValue = searchInput.value;
@@ -12,16 +8,24 @@ export default function handleSearch() {
   if (searchValue) {
     console.log(searchValue);
 
-    updateData("type", "query");
-    updateData("page", 1);
-    updateData("query", searchValue);
-    updateData("category", null);
+    const updateStateData = [
+      ["type", "query"],
+      ["page", 1],
+      ["query", searchValue],
+      ["category", null],
+    ];
 
-    fetchPhotoWithUpdate({ type: "query", page: 1, query: searchValue });
+    const fetchQuery = { type: "query", page: 1, query: searchValue };
 
-    switchPageButtons(1);
-    togglePrevButton();
-    toggleNextButton();
+    updateDataOnFetch({ updateStateData, fetchQuery });
+
+    // updateMultipleData(updateStateData);
+
+    // fetchPhotoWithUpdate({ type: "query", page: 1, query: searchValue });
+
+    // switchPageButtons(1);
+
+    // updatePrevAndNextButton();
   } else {
     // show toast message
     console.log("toast");

@@ -10,6 +10,7 @@ export default function updatePageNo(pageNo) {
   // setActiveButton(selectElm(`.switch-${pageNo}`));
 
   console.log(pageNo);
+
   switchPageButtons(pageNo);
 
   // updateData(appState.page, pageNo);
