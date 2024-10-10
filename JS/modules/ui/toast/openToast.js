@@ -11,8 +11,8 @@ export default function openToast({ type, message }) {
     visibility: "visible",
     scale: 1,
     opacity: 1,
-    backgroundColor: isSuccess ? "#4cd137" : "#e84118",
-    color: isSuccess ? "#000" : "#fff",
+    backgroundColor: isSuccess ? "#05c46b" : "#e84118",
+    color: "#fff",
     animation: "showAnim 1.5s",
   };
 
