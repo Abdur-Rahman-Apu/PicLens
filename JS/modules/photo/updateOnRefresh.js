@@ -28,7 +28,8 @@ export default function updateOnRefresh() {
     updateData("type", "photos");
     updateData("query", null);
     updateData("category", null);
-    fetchPhotoWithUpdate({ type: "photos" });
+
+    fetchPhotoWithUpdate({ type: "photos", page: 1 });
 
     switchPageButtons(1);
     togglePrevButton();

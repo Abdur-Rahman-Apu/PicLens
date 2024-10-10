@@ -104,7 +104,7 @@ header {
 
 .avatar img {
   background-color: #eafbae;
-  height: 55%;
+  height: 65%;
   border-radius: 50%;
   border: 2px solid #646665;
 }
@@ -469,5 +469,12 @@ main aside {
   .likes-amount,
   .created-time p {
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 1480px) {
+  .container {
+    width: 1440px;
+    margin: 0 auto;
   }
 }

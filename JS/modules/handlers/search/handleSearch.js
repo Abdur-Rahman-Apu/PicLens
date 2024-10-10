@@ -27,4 +27,6 @@ export default function handleSearch() {
     console.log("toast");
     showToast({ type: "error", message: "Please fill the field" });
   }
+
+  searchInput.value = "";
 }
